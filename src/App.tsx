@@ -21,11 +21,15 @@ import {
   Rocket,
   Users,
   Award,
+  Target,
+  Compass,
 } from "lucide-react";
 
 // Import Pages - Semester 1
 import { Home } from "./pages/Home";
 import { Profil } from "./pages/Profil";
+import { IdentifikasiDiri } from "./pages/IdentifikasiDiri";
+import { RefleksiMengikutiPPG } from "./pages/RefleksiMengikutiPPG";
 import { Dokumentasi } from "./pages/Dokumentasi";
 import { FilosofiPendidikan } from "./pages/FilosofiPendidikan";
 import { PemahamanPeserta } from "./pages/PemahamanPeserta";
@@ -146,8 +150,8 @@ export default function App() {
     },
     {
       id: "refleksi-ppl-2",
-      name: "Refleksi PPL",
-      shortDesc: "PPL Mandiri II",
+      name: "Refleksi PPLM",
+      shortDesc: "PPL Mandiri",
       icon: Briefcase,
     },
     {
@@ -213,7 +217,7 @@ export default function App() {
 
               <button
                 onClick={() => handleNavigate("profil")}
-                className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                className={`px-3 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
                   activeTab === "profil"
                     ? "bg-brand-primary text-white shadow-md shadow-brand-primary/20"
                     : "text-slate-600 hover:bg-brand-primary/10 hover:text-brand-primary"
@@ -221,6 +225,31 @@ export default function App() {
               >
                 <User className="w-4 h-4" />
                 <span>Profil</span>
+              </button>
+
+              <button
+                onClick={() => handleNavigate("identifikasi-diri")}
+                className={`px-3 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                  activeTab === "identifikasi-diri"
+                    ? "bg-brand-primary text-white shadow-md shadow-brand-primary/20"
+                    : "text-slate-600 hover:bg-brand-primary/10 hover:text-brand-primary"
+                }`}
+              >
+                <Target className="w-4 h-4" />
+                <span>Identifikasi Diri</span>
+              </button>
+
+              <button
+                onClick={() => handleNavigate("refleksi-ppg")}
+                className={`px-3 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                  activeTab === "refleksi-ppg"
+                    ? "bg-brand-primary text-white shadow-md shadow-brand-primary/20"
+                    : "text-slate-600 hover:bg-brand-primary/10 hover:text-brand-primary"
+                }`}
+              >
+                <Compass className="w-4 h-4" />
+                <span className="hidden xl:inline">Refleksi Mengikuti PPG</span>
+                <span className="xl:hidden">Refleksi PPG</span>
               </button>
 
               {/* Semester 1 Dropdown */}
@@ -428,6 +457,32 @@ export default function App() {
                   <span>Profil</span>
                 </button>
 
+                {/* Identifikasi Diri */}
+                <button
+                  onClick={() => handleNavigate("identifikasi-diri")}
+                  className={`flex items-center gap-3 p-3.5 rounded-2xl font-bold text-sm transition-all ${
+                    activeTab === "identifikasi-diri"
+                      ? "bg-brand-primary text-white shadow-md"
+                      : "hover:bg-brand-primary/10 text-slate-700"
+                  }`}
+                >
+                  <Target className="w-5 h-5 shrink-0" />
+                  <span>Identifikasi Diri</span>
+                </button>
+
+                {/* Refleksi Mengikuti PPG */}
+                <button
+                  onClick={() => handleNavigate("refleksi-ppg")}
+                  className={`flex items-center gap-3 p-3.5 rounded-2xl font-bold text-sm transition-all ${
+                    activeTab === "refleksi-ppg"
+                      ? "bg-brand-primary text-white shadow-md"
+                      : "hover:bg-brand-primary/10 text-slate-700"
+                  }`}
+                >
+                  <Compass className="w-5 h-5 shrink-0" />
+                  <span>Refleksi Mengikuti PPG</span>
+                </button>
+
                 {/* Semester 1 Accordion */}
                 <div className="rounded-2xl border border-slate-200/60 overflow-hidden bg-slate-50/50">
                   <button
@@ -564,6 +619,18 @@ export default function App() {
             <Home key="home" onNavigate={handleNavigate} />
           )}
           {activeTab === "profil" && <Profil key="profil" />}
+          {activeTab === "identifikasi-diri" && (
+            <IdentifikasiDiri
+              key="identifikasi-diri"
+              onNavigate={handleNavigate}
+            />
+          )}
+          {activeTab === "refleksi-ppg" && (
+            <RefleksiMengikutiPPG
+              key="refleksi-ppg"
+              onNavigate={handleNavigate}
+            />
+          )}
           {activeTab === "dokumentasi" && <Dokumentasi key="dokumentasi" />}
 
           {/* Semester 1 Pages */}
@@ -691,7 +758,19 @@ export default function App() {
                   </strong>
                   SMK Negeri 2 Salatiga
                 </p>
-                <div className="pt-2">
+                <div className="pt-2 flex flex-col gap-2">
+                  <button
+                    onClick={() => handleNavigate("identifikasi-diri")}
+                    className="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-brand-primary text-white text-xs font-semibold transition-all inline-flex items-center gap-2"
+                  >
+                    <Target size={14} /> Identifikasi Diri & Visi
+                  </button>
+                  <button
+                    onClick={() => handleNavigate("refleksi-ppg")}
+                    className="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-brand-primary text-white text-xs font-semibold transition-all inline-flex items-center gap-2"
+                  >
+                    <Compass size={14} /> Refleksi Mengikuti PPG
+                  </button>
                   <button
                     onClick={() => handleNavigate("dokumentasi")}
                     className="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-brand-primary text-white text-xs font-semibold transition-all inline-flex items-center gap-2"

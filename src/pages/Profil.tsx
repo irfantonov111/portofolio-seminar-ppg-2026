@@ -63,8 +63,8 @@ export const Profil = () => {
                     <GraduationCap size={20} />
                   </div>
                   <div>
-                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-0.5">Institusi</p>
-                    <p className="text-xs font-bold text-slate-700">UKSW Salatiga</p>
+                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-0.5">NIM</p>
+                    <p className="text-xs font-bold text-slate-700">95202536N</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/50 border border-white/40 shadow-sm transition-all hover:shadow-md hover:bg-white/80">

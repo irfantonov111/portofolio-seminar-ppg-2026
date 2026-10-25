@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Sparkles, ArrowRight, Target, BookOpen, Award } from 'lucide-react';
+import { Sparkles, ArrowRight, Target, BookOpen, Award, Compass } from 'lucide-react';
 import { GlassCard } from '../components/GlassCard';
 import { PageTransition } from '../components/PageTransition';
 
@@ -27,20 +27,34 @@ export const Home = ({ onNavigate }: HomeProps) => {
             Refleksi perjalanan akademik dan kepenulisan pedagogis sebagai fondasi pengembangan karakter calon pendidik 
             PPG Prajabatan di Universitas Kristen Satya Wacana (UKSW).
           </p>
-          <div className="flex flex-wrap gap-3 sm:gap-4">
+          <div className="flex flex-wrap gap-2.5 sm:gap-3">
             <button 
               onClick={() => onNavigate('profil')} 
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-brand-primary text-white rounded-2xl font-bold text-xs sm:text-sm shadow-xl shadow-brand-primary/25 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group"
+              className="px-5 sm:px-6 py-3 sm:py-3.5 bg-brand-primary text-white rounded-2xl font-bold text-xs sm:text-sm shadow-xl shadow-brand-primary/25 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 group"
             >
               <span>Eksplorasi Profil</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
             <button 
+              onClick={() => onNavigate('identifikasi-diri')} 
+              className="px-4 sm:px-5 py-3 sm:py-3.5 bg-white/80 hover:bg-white text-slate-700 rounded-2xl font-bold text-xs sm:text-sm border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-center gap-2"
+            >
+              <Target className="w-4 h-4 text-brand-primary" />
+              <span>Identifikasi Diri</span>
+            </button>
+            <button 
+              onClick={() => onNavigate('refleksi-ppg')} 
+              className="px-4 sm:px-5 py-3 sm:py-3.5 bg-white/80 hover:bg-white text-slate-700 rounded-2xl font-bold text-xs sm:text-sm border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-center gap-2"
+            >
+              <Compass className="w-4 h-4 text-brand-primary" />
+              <span>Refleksi PPG</span>
+            </button>
+            <button 
               onClick={() => onNavigate('filosofi-pendidikan')} 
-              className="px-5 sm:px-6 py-3 sm:py-4 bg-white/80 hover:bg-white text-slate-700 rounded-2xl font-bold text-xs sm:text-sm border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-center gap-2"
+              className="px-4 sm:px-5 py-3 sm:py-3.5 bg-white/80 hover:bg-white text-slate-700 rounded-2xl font-bold text-xs sm:text-sm border border-slate-200/80 shadow-sm hover:shadow-md transition-all flex items-center gap-2"
             >
               <BookOpen className="w-4 h-4 text-brand-primary" />
-              <span>Refleksi Pembelajaran</span>
+              <span>Refleksi Mata Kuliah</span>
             </button>
           </div>
         </motion.div>
