@@ -618,9 +618,7 @@ export const RefleksiMengikutiPPG = ({ onNavigate }: RefleksiMengikutiPPGProps) 
               <span className="block font-bold text-sm text-slate-800">
                 Irfan Hananto
               </span>
-              <span className="text-[11px] text-slate-500 uppercase tracking-wider font-semibold">
-                Guru Profesional Bidang Studi Informatika &bull; PPG Prajabatan
-              </span>
+              
             </div>
 
             {onNavigate && (

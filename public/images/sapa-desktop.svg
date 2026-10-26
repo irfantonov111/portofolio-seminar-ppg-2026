@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#0e3a35" />
+      <stop offset="100%" stop-color="#042f2e" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+
+  <!-- Navbar Mockup -->
+  <g transform="translate(60, 40)">
+    <rect width="1080" height="64" rx="16" fill="#ffffff" filter="url(#shadow)" opacity="0.98"/>
+    <!-- Logo -->
+    <rect x="24" y="14" width="36" height="36" rx="10" fill="url(#tealGrad)" />
+    <text x="32" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="18" fill="#ffffff">S</text>
+    <text x="70" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="20" fill="#0f172a">SAPA</text>
+    <text x="130" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="13" fill="#64748b">| Sarana Pendampingan &amp; Asistensi Siswa</text>
+    
+    <!-- Nav Items -->
+    <rect x="680" y="16" width="90" height="32" rx="10" fill="#0d9488" opacity="0.12" />
+    <text x="696" y="37" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="13" fill="#0d9488">Beranda</text>
+    <text x="800" y="37" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="13" fill="#64748b">Mood Check</text>
+    <text x="910" y="37" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="13" fill="#64748b">Konseling</text>
+    <circle cx="1035" cy="32" r="16" fill="#e2e8f0" />
+    <text x="1029" y="36" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#475569">IH</text>
+  </g>
+
+  <!-- Content Grid -->
+  <!-- Card 1: Mood Check Widget -->
+  <g transform="translate(60, 130)">
+    <rect width="520" height="230" rx="20" fill="url(#cardGrad)" filter="url(#shadow)"/>
+    <text x="30" y="45" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="18" fill="#0f172a">Mood Check Harian Siswa</text>
+    <text x="30" y="70" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748b">Bagaimana perasaanmu hari ini? Catat kondisi emosimu secara berkala.</text>
+    
+    <!-- Mood Selector Pills -->
+    <g transform="translate(30, 95)">
+      <!-- Mood 1 -->
+      <rect width="90" height="65" rx="14" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" />
+      <text x="33" y="32" font-size="22">😊</text>
+      <text x="24" y="52" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#047857">Senang</text>
+      <!-- Mood 2 -->
+      <g transform="translate(100, 0)">
+        <rect width="90" height="65" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+        <text x="33" y="32" font-size="22">😌</text>
+        <text x="26" y="52" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#475569">Tenang</text>
+      </g>
+      <!-- Mood 3 -->
+      <g transform="translate(200, 0)">
+        <rect width="90" height="65" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+        <text x="33" y="32" font-size="22">😟</text>
+        <text x="26" y="52" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#475569">Cemas</text>
+      </g>
+      <!-- Mood 4 -->
+      <g transform="translate(300, 0)">
+        <rect width="90" height="65" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+        <text x="33" y="32" font-size="22">😴</text>
+        <text x="30" y="52" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#475569">Lelah</text>
+      </g>
+      <!-- Mood 5 -->
+      <g transform="translate(400, 0)">
+        <rect width="60" height="65" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1" />
+        <text x="18" y="32" font-size="22">🤔</text>
+        <text x="15" y="52" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="11" fill="#475569">Lainnya</text>
+      </g>
+    </g>
+
+    <!-- Status pill -->
+    <rect x="30" y="180" width="460" height="32" rx="10" fill="#f1f5f9" />
+    <circle cx="48" cy="196" r="5" fill="#10b981" />
+    <text x="62" y="201" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#475569">Tercatat: Terakhir diperbarui hari ini pukul 08:15 WIB</text>
+  </g>
+
+  <!-- Card 2: Layanan Pelaporan Aman -->
+  <g transform="translate(620, 130)">
+    <rect width="520" height="230" rx="20" fill="url(#cardGrad)" filter="url(#shadow)"/>
+    <text x="30" y="45" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="18" fill="#0f172a">Pelaporan Masalah &amp; Konseling</text>
+    <text x="30" y="70" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748b">Tersedia opsi pengiriman laporan dengan identitas terbatas atau anonim.</text>
+    
+    <g transform="translate(30, 95)">
+      <rect width="215" height="105" rx="14" fill="#f0fdfa" stroke="#0d9488" stroke-width="1.5"/>
+      <rect x="18" y="18" width="30" height="30" rx="8" fill="url(#tealGrad)"/>
+      <text x="24" y="38" font-size="15" fill="#ffffff">🛡️</text>
+      <text x="58" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="14" fill="#0f172a">Lapor Anonim</text>
+      <text x="58" y="50" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Identitas disamarkan</text>
+      <text x="18" y="85" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#0d9488">Mulai Laporan →</text>
+    </g>
+
+    <g transform="translate(275, 95)">
+      <rect width="215" height="105" rx="14" fill="#f5f3ff" stroke="#6366f1" stroke-width="1.5"/>
+      <rect x="18" y="18" width="30" height="30" rx="8" fill="url(#indigoGrad)"/>
+      <text x="24" y="38" font-size="15" fill="#ffffff">📅</text>
+      <text x="58" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="14" fill="#0f172a">Jadwal Konseling</text>
+      <text x="58" y="50" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Atur jadwal tatap muka</text>
+      <text x="18" y="85" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#6366f1">Pilih Jadwal →</text>
+    </g>
+  </g>
+
+  <!-- Bottom Panel: Dashboard Status & Role Access -->
+  <g transform="translate(60, 390)">
+    <rect width="1080" height="235" rx="20" fill="url(#cardGrad)" filter="url(#shadow)"/>
+    <text x="30" y="40" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="18" fill="#0f172a">Pemantauan &amp; Tindak Lanjut Guru BK / Wali Kelas</text>
+    <text x="30" y="65" font-family="'Segoe UI', Roboto, sans-serif" font-size="13" fill="#64748b">Sistem hak akses bertingkat (RBAC): Siswa, Guru BK, Wali Kelas, dan Administrator.</text>
+    
+    <!-- Table Mockup -->
+    <g transform="translate(30, 85)">
+      <!-- Table Header -->
+      <rect width="1020" height="38" rx="10" fill="#0f172a" />
+      <text x="20" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#ffffff">NO</text>
+      <text x="70" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#ffffff">KODE TIKET</text>
+      <text x="220" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#ffffff">KATEGORI</text>
+      <text x="440" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#ffffff">TIPE IDENTITAS</text>
+      <text x="660" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#ffffff">STATUS PENANGANAN</text>
+      <text x="890" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#ffffff">AKSI</text>
+
+      <!-- Row 1 -->
+      <rect y="48" width="1020" height="42" rx="8" fill="#f8fafc" />
+      <text x="20" y="74" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748b">1</text>
+      <text x="70" y="74" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#0d9488">#SAPA-2026-081</text>
+      <text x="220" y="74" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1e293b">Akademik &amp; Beban Tugas</text>
+      <rect x="440" y="58" width="90" height="22" rx="6" fill="#f1f5f9" />
+      <text x="450" y="73" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="bold" fill="#475569">Anonim</text>
+      <rect x="660" y="58" width="140" height="22" rx="6" fill="#fef3c7" />
+      <text x="670" y="73" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="bold" fill="#b45309">● Menunggu Jadwal</text>
+      <text x="890" y="74" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#0d9488">Detail →</text>
+
+      <!-- Row 2 -->
+      <rect y="96" width="1020" height="42" rx="8" fill="#ffffff" />
+      <text x="20" y="122" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748b">2</text>
+      <text x="70" y="122" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#0d9488">#SAPA-2026-079</text>
+      <text x="220" y="122" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#1e293b">Sosial &amp; Adaptasi Teman</text>
+      <rect x="440" y="106" width="120" height="22" rx="6" fill="#e0f2fe" />
+      <text x="450" y="121" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="bold" fill="#0369a1">Identitas Terbatas</text>
+      <rect x="660" y="106" width="140" height="22" rx="6" fill="#dcfce7" />
+      <text x="670" y="121" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="bold" fill="#15803d">✔ Selesai Konseling</text>
+      <text x="890" y="122" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#0d9488">Detail →</text>
+    </g>
+  </g>
+</svg>

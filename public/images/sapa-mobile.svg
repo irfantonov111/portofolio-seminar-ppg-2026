@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#0e3a35" />
+      <stop offset="100%" stop-color="#042f2e" />
+    </linearGradient>
+    <linearGradient id="mTealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="mIndigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <filter id="mShadow" x="-10%" y="-5%" width="120%" height="110%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="450" height="800" fill="url(#mBgGrad)" />
+
+  <!-- Phone Frame Wrapper -->
+  <g transform="translate(35, 25)" filter="url(#mShadow)">
+    <!-- Phone Body -->
+    <rect width="380" height="750" rx="44" fill="#ffffff" stroke="#334155" stroke-width="4"/>
+    
+    <!-- Phone Notch / Camera -->
+    <rect x="130" y="10" width="120" height="22" rx="11" fill="#0f172a" />
+    <circle cx="215" cy="21" r="4" fill="#334155" />
+
+    <!-- App Header -->
+    <g transform="translate(24, 48)">
+      <rect width="332" height="52" rx="14" fill="#f8fafc" />
+      <rect x="12" y="10" width="32" height="32" rx="8" fill="url(#mTealGrad)" />
+      <text x="22" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="16" fill="#ffffff">S</text>
+      <text x="54" y="32" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="16" fill="#0f172a">SAPA Mobile</text>
+      <circle cx="306" cy="26" r="14" fill="#e2e8f0" />
+      <text x="300" y="30" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="10" fill="#475569">IH</text>
+    </g>
+
+    <!-- Greeting & Status -->
+    <g transform="translate(24, 115)">
+      <text x="0" y="20" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="17" fill="#0f172a">Halo, Siswa! 👋</text>
+      <text x="0" y="40" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" fill="#64748b">Layanan Pendampingan BK &amp; Wali Kelas</text>
+    </g>
+
+    <!-- Mood Check Widget (Mobile) -->
+    <g transform="translate(24, 175)">
+      <rect width="332" height="135" rx="18" fill="#f0fdfa" stroke="#ccfbf1" stroke-width="1.5"/>
+      <text x="16" y="26" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="13" fill="#0d9488">MOOD CHECK HARI INI</text>
+      <text x="16" y="44" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Sentuh ekspresi untuk mencatat perasaan:</text>
+      
+      <g transform="translate(14, 58)">
+        <rect width="56" height="60" rx="12" fill="#ffffff" stroke="#10b981" stroke-width="1.5" />
+        <text x="16" y="30" font-size="20">😊</text>
+        <text x="10" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="10" fill="#047857">Senang</text>
+
+        <g transform="translate(62, 0)">
+          <rect width="56" height="60" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+          <text x="16" y="30" font-size="20">😌</text>
+          <text x="11" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#475569">Tenang</text>
+        </g>
+
+        <g transform="translate(124, 0)">
+          <rect width="56" height="60" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+          <text x="16" y="30" font-size="20">😟</text>
+          <text x="13" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#475569">Cemas</text>
+        </g>
+
+        <g transform="translate(186, 0)">
+          <rect width="56" height="60" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+          <text x="16" y="30" font-size="20">😴</text>
+          <text x="15" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#475569">Lelah</text>
+        </g>
+
+        <g transform="translate(248, 0)">
+          <rect width="56" height="60" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+          <text x="16" y="30" font-size="20">🤔</text>
+          <text x="11" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#475569">Lainnya</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Quick Action 1: Pelaporan Masalah -->
+    <g transform="translate(24, 325)">
+      <rect width="332" height="85" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="14" y="16" width="48" height="52" rx="12" fill="url(#mTealGrad)" />
+      <text x="26" y="48" font-size="22" fill="#ffffff">🛡️</text>
+      <text x="74" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="14" fill="#0f172a">Buat Pelaporan Masalah</text>
+      <text x="74" y="56" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Opsi identitas terbatas atau anonim aman</text>
+      <text x="300" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="16" fill="#0d9488">›</text>
+    </g>
+
+    <!-- Quick Action 2: Jadwal Konseling -->
+    <g transform="translate(24, 422)">
+      <rect width="332" height="85" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+      <rect x="14" y="16" width="48" height="52" rx="12" fill="url(#mIndigoGrad)" />
+      <text x="26" y="48" font-size="22" fill="#ffffff">📅</text>
+      <text x="74" y="38" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="14" fill="#0f172a">Jadwal Konseling Tatap Muka</text>
+      <text x="74" y="56" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Ajukan waktu temu dengan guru BK</text>
+      <text x="300" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="16" fill="#6366f1">›</text>
+    </g>
+
+    <!-- Status Tiket Aktif -->
+    <g transform="translate(24, 520)">
+      <rect width="332" height="115" rx="16" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="16" y="24" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#475569">TIKET SAYA YANG SEDANG BERJALAN</text>
+      <rect x="16" y="36" width="300" height="64" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="28" y="58" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="12" fill="#0f172a">#SAPA-2026-081 (Anonim)</text>
+      <text x="28" y="76" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" fill="#64748b">Kategori: Akademik &amp; Tugas</text>
+      <rect x="200" y="46" width="105" height="22" rx="6" fill="#fef3c7"/>
+      <text x="208" y="61" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" font-weight="bold" fill="#b45309">● Menunggu Jadwal</text>
+    </g>
+
+    <!-- Bottom Navigation Bar (Phone) -->
+    <g transform="translate(0, 680)">
+      <rect width="380" height="70" rx="0" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+      <text x="45" y="34" font-size="18">🏠</text>
+      <text x="43" y="50" font-family="'Segoe UI', Roboto, sans-serif" font-weight="bold" font-size="9" fill="#0d9488">Beranda</text>
+
+      <text x="135" y="34" font-size="18">😊</text>
+      <text x="130" y="50" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748b">Mood</text>
+
+      <text x="225" y="34" font-size="18">📝</text>
+      <text x="220" y="50" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748b">Lapor</text>
+
+      <text x="315" y="34" font-size="18">👤</text>
+      <text x="313" y="50" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" fill="#64748b">Akun</text>
+
+      <!-- Home Indicator bar -->
+      <rect x="120" y="60" width="140" height="4" rx="2" fill="#94a3b8" />
+    </g>
+  </g>
+</svg>

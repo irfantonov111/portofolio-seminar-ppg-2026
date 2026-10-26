@@ -44,6 +44,7 @@ import { RefleksiPSE } from "./pages/RefleksiPSE";
 import { RefleksiPPDB } from "./pages/RefleksiPPDB";
 import { RefleksiPPL2 } from "./pages/RefleksiPPL2";
 import { RefleksiPK } from "./pages/RefleksiPK";
+import { KaryaInovasi } from "./pages/KaryaInovasi";
 
 interface NavItem {
   id: string;
@@ -53,7 +54,7 @@ interface NavItem {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("home");
+  const [activeTab, setActiveTab] = useState("profil");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -181,40 +182,17 @@ export default function App() {
       >
         <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
           <div
-            className={`glass px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl flex items-center justify-between border-white/50 shadow-lg transition-all ${isScrolled ? "bg-white/95 shadow-brand-primary/10 backdrop-blur-md" : "bg-white/70"}`}
+            className={`glass px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl flex items-center justify-between lg:justify-center border-white/50 shadow-lg transition-all ${isScrolled ? "bg-white/95 shadow-brand-primary/10 backdrop-blur-md" : "bg-white/70"}`}
           >
-            {/* Brand Logo & Name (Always visible on mobile & desktop) */}
-            <div
-              className="flex items-center gap-3 cursor-pointer group"
-              onClick={() => handleNavigate("home")}
-            >
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-primary to-teal-500 flex items-center justify-center text-white font-bold text-sm sm:text-base shadow-md shadow-brand-primary/25 group-hover:scale-105 transition-transform shrink-0">
-                IH
-              </div>
-              <div className="text-left">
-                <span className="font-bold text-sm sm:text-base text-slate-800 block leading-tight group-hover:text-brand-primary transition-colors">
-                  Irfan Hananto
-                </span>
-                <span className="text-[10px] text-slate-500 font-semibold tracking-wider uppercase block">
-                  E-Portfolio PPG
-                </span>
-              </div>
+            {/* Mobile Header Label (Tanpa branding logo/nama) */}
+            <div className="lg:hidden flex items-center gap-2">
+              <span className="text-xs font-bold text-brand-primary tracking-wider uppercase">
+                Menu Portofolio
+              </span>
             </div>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-1.5 xl:gap-2">
-              <button
-                onClick={() => handleNavigate("home")}
-                className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
-                  activeTab === "home"
-                    ? "bg-brand-primary text-white shadow-md shadow-brand-primary/20"
-                    : "text-slate-600 hover:bg-brand-primary/10 hover:text-brand-primary"
-                }`}
-              >
-                <Sparkles className="w-4 h-4" />
-                <span>Home</span>
-              </button>
-
+            <div className="hidden lg:flex items-center justify-center gap-1.5 xl:gap-2 flex-wrap">
               <button
                 onClick={() => handleNavigate("profil")}
                 className={`px-3 xl:px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
@@ -392,6 +370,19 @@ export default function App() {
                 </AnimatePresence>
               </div>
 
+              {/* Karya Inovasi */}
+              <button
+                onClick={() => handleNavigate("karya-inovasi")}
+                className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                  activeTab === "karya-inovasi"
+                    ? "bg-brand-primary text-white shadow-md shadow-brand-primary/20"
+                    : "text-slate-600 hover:bg-brand-primary/10 hover:text-brand-primary"
+                }`}
+              >
+                <Lightbulb className="w-4 h-4" />
+                <span>Karya Inovasi</span>
+              </button>
+
               <button
                 onClick={() => handleNavigate("dokumentasi")}
                 className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
@@ -431,19 +422,6 @@ export default function App() {
               className="absolute top-full left-4 right-4 sm:left-6 sm:right-6 lg:hidden z-40 mt-2"
             >
               <div className="glass p-5 rounded-3xl flex flex-col gap-2 shadow-2xl bg-white/95 border border-white/80 max-h-[82vh] overflow-y-auto backdrop-blur-xl">
-                {/* Home */}
-                <button
-                  onClick={() => handleNavigate("home")}
-                  className={`flex items-center gap-3 p-3.5 rounded-2xl font-bold text-sm transition-all ${
-                    activeTab === "home"
-                      ? "bg-brand-primary text-white shadow-md"
-                      : "hover:bg-brand-primary/10 text-slate-700"
-                  }`}
-                >
-                  <Sparkles className="w-5 h-5 shrink-0" />
-                  <span>Home</span>
-                </button>
-
                 {/* Profil */}
                 <button
                   onClick={() => handleNavigate("profil")}
@@ -593,6 +571,19 @@ export default function App() {
                   </AnimatePresence>
                 </div>
 
+                {/* Karya Inovasi */}
+                <button
+                  onClick={() => handleNavigate("karya-inovasi")}
+                  className={`flex items-center gap-3 p-3.5 rounded-2xl font-bold text-sm transition-all ${
+                    activeTab === "karya-inovasi"
+                      ? "bg-brand-primary text-white shadow-md"
+                      : "hover:bg-brand-primary/10 text-slate-700"
+                  }`}
+                >
+                  <Lightbulb className="w-5 h-5 shrink-0" />
+                  <span>Karya Inovasi</span>
+                </button>
+
                 {/* Dokumentasi */}
                 <button
                   onClick={() => handleNavigate("dokumentasi")}
@@ -630,6 +621,9 @@ export default function App() {
               key="refleksi-ppg"
               onNavigate={handleNavigate}
             />
+          )}
+          {activeTab === "karya-inovasi" && (
+            <KaryaInovasi key="karya-inovasi" />
           )}
           {activeTab === "dokumentasi" && <Dokumentasi key="dokumentasi" />}
 
@@ -770,6 +764,12 @@ export default function App() {
                     className="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-brand-primary text-white text-xs font-semibold transition-all inline-flex items-center gap-2"
                   >
                     <Compass size={14} /> Refleksi Mengikuti PPG
+                  </button>
+                  <button
+                    onClick={() => handleNavigate("karya-inovasi")}
+                    className="px-3.5 py-1.5 rounded-lg bg-white/10 hover:bg-brand-primary text-white text-xs font-semibold transition-all inline-flex items-center gap-2"
+                  >
+                    <Lightbulb size={14} /> Karya Inovasi
                   </button>
                   <button
                     onClick={() => handleNavigate("dokumentasi")}

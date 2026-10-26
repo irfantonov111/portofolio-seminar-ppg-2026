@@ -297,7 +297,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
                     Bidang Studi
                   </span>
                   <span className="text-sm font-bold text-slate-800">
-                    6 Visi Guru Informatika
+                    6 Visi Guru Profesional
                   </span>
                 </div>
               </div>
