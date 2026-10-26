@@ -52,7 +52,7 @@ export const Profil = () => {
             {/* Basic Info */}
             <div className="flex-1 text-center md:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 text-brand-primary text-[10px] font-bold uppercase tracking-widest mb-4">
-                <Target size={12} /> Mahasiswa PPG Prajabatan 2024
+                <Target size={12} /> Mahasiswa PPG Prajabatan 2026
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-800 mb-2 font-serif leading-tight">Irfan Hananto</h2>
               <p className="text-base sm:text-xl md:text-2xl text-brand-primary font-bold mb-6 italic opacity-90">Bidang Studi: Informatika</p>
