@@ -123,10 +123,10 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
     {
       id: "inf-3",
       icon: Network,
-      badge: "Spesialisasi Jaringan",
-      title: "Pemahaman Konsep & Prosedur Jaringan",
+      badge: "Pembelajaran",
+      title: "Pembelajaran Mendalam",
       description:
-        "Membimbing peserta didik agar memahami konsep dan alasan di balik setiap langkah kerja, khususnya dalam pembelajaran jaringan komputer.",
+        "Membimbing peserta didik agar memahami konsep dan alasan di balik setiap langkah kerja.",
       borderColor: "border-indigo-500/20",
       accentBg: "bg-indigo-500/10 text-indigo-600",
     },
@@ -294,7 +294,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
                 </div>
                 <div className="text-left">
                   <span className="text-xs text-slate-400 font-semibold block uppercase tracking-wider">
-                    Bidang Studi
+                    Visi
                   </span>
                   <span className="text-sm font-bold text-slate-800">
                     6 Visi Guru Profesional
@@ -350,7 +350,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
                     : "bg-slate-100 hover:bg-slate-200 text-slate-600"
                 }`}
               >
-                2. Visi Guru Informatika
+                2. Visi Guru Profesional
               </button>
               <button
                 onClick={() => setActiveFilter("langkah-strategis")}
@@ -462,7 +462,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
                 <span>Dimensi Kedua</span>
               </div>
               <h2 className="text-xl sm:text-3xl font-bold font-serif text-slate-800">
-                2. Visi sebagai Calon Guru Informatika
+                2. Visi sebagai Calon Guru 
               </h2>
             </div>
             <span className="text-xs font-semibold text-indigo-700 bg-indigo-50/80 px-3.5 py-1.5 rounded-xl border border-indigo-200/60 shadow-xs self-start sm:self-auto">
@@ -506,10 +506,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
                   </div>
 
                   <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-medium">
-                    <span className="text-indigo-600 font-semibold flex items-center gap-1.5">
-                      <Cpu className="w-3.5 h-3.5" />
-                      <span>Informatika & Jaringan</span>
-                    </span>
+                    
                     <span className="font-mono text-slate-400">0{index + 1} / 06</span>
                   </div>
                 </motion.div>
@@ -613,7 +610,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
           </div>
 
           <blockquote className="text-base sm:text-xl md:text-2xl font-serif italic text-slate-800 leading-relaxed mb-6">
-            "Menjadi guru Informatika profesional bukan semata mentransfer keahlian teknis dan konfigurasi jaringan, melainkan menuntun pola pikir kritis, mengasah kemandirian, dan menginspirasi peserta didik menjadi pribadi berintegritas di era digital."
+            "Menjadi guru profesional bukan semata mentransfer keahlian teknis dan konfigurasi jaringan, melainkan menuntun pola pikir kritis, mengasah kemandirian, dan menginspirasi peserta didik menjadi pribadi berintegritas di era digital."
           </blockquote>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 border-t border-slate-200/60">
