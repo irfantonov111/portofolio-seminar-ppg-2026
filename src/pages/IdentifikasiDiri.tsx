@@ -610,7 +610,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
           </div>
 
           <blockquote className="text-base sm:text-xl md:text-2xl font-serif italic text-slate-800 leading-relaxed mb-6">
-            "Menjadi guru profesional bukan semata mentransfer keahlian teknis dan konfigurasi jaringan, melainkan menuntun pola pikir kritis, mengasah kemandirian, dan menginspirasi peserta didik menjadi pribadi berintegritas di era digital."
+            "Menjadi guru profesional bukan semata mentransfer ilmu, melainkan menuntun pola pikir kritis, mengasah kemandirian, dan menginspirasi peserta didik menjadi pribadi berintegritas di era digital."
           </blockquote>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 border-t border-slate-200/60">
