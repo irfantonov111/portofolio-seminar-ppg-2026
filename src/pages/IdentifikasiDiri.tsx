@@ -130,18 +130,9 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
       borderColor: "border-indigo-500/20",
       accentBg: "bg-indigo-500/10 text-indigo-600",
     },
+   
     {
       id: "inf-4",
-      icon: Workflow,
-      badge: "Troubleshooting",
-      title: "Analisis Masalah & Solusi Mandiri",
-      description:
-        "Melatih peserta didik untuk menganalisis masalah, menguji konfigurasi, dan menemukan solusi secara mandiri.",
-      borderColor: "border-cyan-500/20",
-      accentBg: "bg-cyan-500/10 text-cyan-600",
-    },
-    {
-      id: "inf-5",
       icon: ShieldCheck,
       badge: "Iklim Kelas",
       title: "Lingkungan Belajar yang Aman & Adil",
@@ -151,10 +142,10 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
       accentBg: "bg-emerald-500/10 text-emerald-600",
     },
     {
-      id: "inf-6",
+      id: "inf-5",
       icon: Rocket,
-      badge: "Kemandirian",
-      title: "Kemandirian & Pembelajar Sepanjang Hayat",
+      badge: "Growth Mindset",
+      title: "Pembelajar Sepanjang Hayat",
       description:
         "Menumbuhkan kepercayaan diri, kemandirian, tanggung jawab, dan kemauan untuk terus belajar.",
       borderColor: "border-amber-500/20",
@@ -350,7 +341,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
                     : "bg-slate-100 hover:bg-slate-200 text-slate-600"
                 }`}
               >
-                2. Visi Guru Profesional
+                2. Visi Pribadi Sebagai Calon Guru
               </button>
               <button
                 onClick={() => setActiveFilter("langkah-strategis")}
@@ -462,7 +453,7 @@ export const IdentifikasiDiri = ({ onNavigate }: IdentifikasiDiriProps) => {
                 <span>Dimensi Kedua</span>
               </div>
               <h2 className="text-xl sm:text-3xl font-bold font-serif text-slate-800">
-                2. Visi sebagai Calon Guru 
+                2. Visi Pribadi Sebagai Calon Guru 
               </h2>
             </div>
             <span className="text-xs font-semibold text-indigo-700 bg-indigo-50/80 px-3.5 py-1.5 rounded-xl border border-indigo-200/60 shadow-xs self-start sm:self-auto">
