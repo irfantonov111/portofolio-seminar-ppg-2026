@@ -387,7 +387,7 @@ export const RefleksiPPLM: React.FC<RefleksiPPLMProps> = ({
               <LocalPdfCard
                 initialTitle="Dokumen Refleksi Praktik Mengajar Terbimbing (LK.4.PPLT)"
                 initialDescription="Laporan refleksi komprehensif praktik mengajar terbimbing siklus 1, 2, dan 3 di kelas XI TKJ bersama Guru Pamong. Memuat evaluasi tahapan apersepsi, penggunaan media simulator, respon peserta didik, serta rekomendasi tindak lanjut."
-                initialPdfUrl="/images/LK.4.PPLT-Irfan Hananto-95202536N.pdf"
+                initialPdfUrl="/images/LK-3-Refleksi-Praktik-Mengajar-Terbimbing.pdf"
                 badgeText="LK 4 PPLT Terbimbing"
                 colorTheme="primary"
               />
