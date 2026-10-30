@@ -45,6 +45,7 @@ import { RefleksiPPDB } from "./pages/RefleksiPPDB";
 import { RefleksiPPL2 } from "./pages/RefleksiPPL2";
 import { RefleksiPK } from "./pages/RefleksiPK";
 import { KaryaInovasi } from "./pages/KaryaInovasi";
+import { RefleksiPPLM } from "./pages/RefleksiPPLM";
 
 interface NavItem {
   id: string;
@@ -61,13 +62,21 @@ export default function App() {
   // Desktop Dropdown States
   const [sem1DropdownOpen, setSem1DropdownOpen] = useState(false);
   const [sem2DropdownOpen, setSem2DropdownOpen] = useState(false);
+  const [pplmDropdownOpen, setPplmDropdownOpen] = useState(false);
 
   // Mobile Accordion States
   const [mobileSem1Open, setMobileSem1Open] = useState(false);
   const [mobileSem2Open, setMobileSem2Open] = useState(false);
+  const [mobilePplmOpen, setMobilePplmOpen] = useState(false);
+
+  // Submenu for PPLM: 'terbimbing' or 'mandiri'
+  const [pplmSubmenu, setPplmSubmenu] = useState<"terbimbing" | "mandiri">(
+    "mandiri",
+  );
 
   const sem1Ref = useRef<HTMLDivElement>(null);
   const sem2Ref = useRef<HTMLDivElement>(null);
+  const pplmRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 30);
@@ -83,6 +92,9 @@ export default function App() {
       }
       if (sem2Ref.current && !sem2Ref.current.contains(event.target as Node)) {
         setSem2DropdownOpen(false);
+      }
+      if (pplmRef.current && !pplmRef.current.contains(event.target as Node)) {
+        setPplmDropdownOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -165,12 +177,22 @@ export default function App() {
 
   const isSem1Active = semester1Links.some((link) => link.id === activeTab);
   const isSem2Active = semester2Links.some((link) => link.id === activeTab);
+  const isPplmActive =
+    activeTab === "refleksi-pplm" || activeTab === "refleksi-ppl-2";
 
-  const handleNavigate = (id: string) => {
+  const handleNavigate = (id: string, sub?: "terbimbing" | "mandiri") => {
+    if (sub) {
+      setPplmSubmenu(sub);
+    } else if (id === "refleksi-ppl-2" || id === "refleksi-pplm-mandiri") {
+      setPplmSubmenu("mandiri");
+    } else if (id === "refleksi-pplm-terbimbing") {
+      setPplmSubmenu("terbimbing");
+    }
     setActiveTab(id);
     setMobileMenuOpen(false);
     setSem1DropdownOpen(false);
     setSem2DropdownOpen(false);
+    setPplmDropdownOpen(false);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -306,6 +328,7 @@ export default function App() {
                   onClick={() => {
                     setSem2DropdownOpen(!sem2DropdownOpen);
                     setSem1DropdownOpen(false);
+                    setPplmDropdownOpen(false);
                   }}
                   className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
                     isSem2Active
@@ -370,6 +393,107 @@ export default function App() {
                 </AnimatePresence>
               </div>
 
+              {/* Menu Baru: Refleksi PPLM Dropdown */}
+              <div className="relative" ref={pplmRef}>
+                <button
+                  onClick={() => {
+                    setPplmDropdownOpen(!pplmDropdownOpen);
+                    setSem1DropdownOpen(false);
+                    setSem2DropdownOpen(false);
+                  }}
+                  className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
+                    isPplmActive
+                      ? "bg-brand-primary text-white shadow-md shadow-brand-primary/20"
+                      : pplmDropdownOpen
+                        ? "bg-brand-primary/15 text-brand-primary"
+                        : "text-slate-600 hover:bg-brand-primary/10 hover:text-brand-primary"
+                  }`}
+                  aria-expanded={pplmDropdownOpen}
+                >
+                  <Briefcase className="w-4 h-4" />
+                  <span>Refleksi PPLM</span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-200 ${pplmDropdownOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+
+                <AnimatePresence>
+                  {pplmDropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.18 }}
+                      className="absolute top-full left-0 mt-2 w-64 glass bg-white/95 rounded-2xl p-2.5 shadow-2xl border border-white/80 z-50 backdrop-blur-xl"
+                    >
+                      <div className="px-2.5 py-1.5 mb-1.5 border-b border-slate-100 flex items-center justify-between">
+                        <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">
+                          Praktik Lapangan (PPLM)
+                        </span>
+                        <span className="text-[10px] font-bold text-brand-primary bg-brand-primary/10 px-2 py-0.5 rounded-full">
+                          2 Menu
+                        </span>
+                      </div>
+                      <div className="space-y-1">
+                        <button
+                          onClick={() =>
+                            handleNavigate("refleksi-pplm", "terbimbing")
+                          }
+                          className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 ${
+                            isPplmActive && pplmSubmenu === "terbimbing"
+                              ? "bg-brand-primary text-white shadow-sm"
+                              : "text-slate-700 hover:bg-brand-primary/10 hover:text-brand-primary"
+                          }`}
+                        >
+                          <GraduationCap className="w-4 h-4 shrink-0" />
+                          <div className="truncate">
+                            <span className="block leading-tight">
+                              PPL Terbimbing
+                            </span>
+                            <span
+                              className={`text-[10px] font-normal block truncate ${
+                                isPplmActive && pplmSubmenu === "terbimbing"
+                                  ? "text-white/80"
+                                  : "text-slate-400"
+                              }`}
+                            >
+                              Praktik Terbimbing Siklus 1 - 3
+                            </span>
+                          </div>
+                        </button>
+
+                        <button
+                          onClick={() =>
+                            handleNavigate("refleksi-pplm", "mandiri")
+                          }
+                          className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-2.5 ${
+                            isPplmActive && pplmSubmenu === "mandiri"
+                              ? "bg-indigo-600 text-white shadow-sm"
+                              : "text-slate-700 hover:bg-indigo-50 hover:text-indigo-600"
+                          }`}
+                        >
+                          <Briefcase className="w-4 h-4 shrink-0" />
+                          <div className="truncate">
+                            <span className="block leading-tight">
+                              PPL Mandiri
+                            </span>
+                            <span
+                              className={`text-[10px] font-normal block truncate ${
+                                isPplmActive && pplmSubmenu === "mandiri"
+                                  ? "text-white/80"
+                                  : "text-slate-400"
+                              }`}
+                            >
+                              Praktik Mandiri & 6 Analisis
+                            </span>
+                          </div>
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               {/* Karya Inovasi */}
               <button
                 onClick={() => handleNavigate("karya-inovasi")}
@@ -383,7 +507,7 @@ export default function App() {
                 <span>Karya Inovasi</span>
               </button>
 
-              <button
+              {/* <button
                 onClick={() => handleNavigate("dokumentasi")}
                 className={`px-3.5 py-2 rounded-xl text-xs xl:text-sm font-bold transition-all flex items-center gap-1.5 ${
                   activeTab === "dokumentasi"
@@ -393,7 +517,7 @@ export default function App() {
               >
                 <Users className="w-4 h-4" />
                 <span>Dokumentasi</span>
-              </button>
+              </button> */}
             </div>
 
             {/* Mobile Hamburger Button */}
@@ -571,6 +695,89 @@ export default function App() {
                   </AnimatePresence>
                 </div>
 
+                {/* Mobile Accordion Refleksi PPLM */}
+                <div className="rounded-2xl border border-slate-200/60 overflow-hidden bg-slate-50/50">
+                  <button
+                    onClick={() => setMobilePplmOpen(!mobilePplmOpen)}
+                    className={`w-full flex items-center justify-between p-3.5 font-bold text-sm transition-colors ${
+                      isPplmActive
+                        ? "text-brand-primary bg-brand-primary/10"
+                        : "text-slate-800"
+                    }`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <Briefcase className="w-5 h-5 text-brand-primary" />
+                      <span>Refleksi PPLM</span>
+                    </div>
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform duration-200 ${mobilePplmOpen ? "rotate-180" : ""}`}
+                    />
+                  </button>
+
+                  <AnimatePresence>
+                    {mobilePplmOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden px-2 pb-2 space-y-1"
+                      >
+                        <button
+                          onClick={() =>
+                            handleNavigate("refleksi-pplm", "terbimbing")
+                          }
+                          className={`w-full flex items-center gap-3 p-2.5 rounded-xl text-xs font-semibold transition-all text-left ${
+                            isPplmActive && pplmSubmenu === "terbimbing"
+                              ? "bg-brand-primary text-white shadow-sm"
+                              : "text-slate-700 hover:bg-brand-primary/10"
+                          }`}
+                        >
+                          <GraduationCap className="w-4 h-4 shrink-0" />
+                          <div>
+                            <span className="block font-bold">
+                              PPL Terbimbing
+                            </span>
+                            <span
+                              className={`text-[10px] block ${
+                                isPplmActive && pplmSubmenu === "terbimbing"
+                                  ? "text-white/80"
+                                  : "text-slate-400"
+                              }`}
+                            >
+                              Praktik Terbimbing Siklus 1 - 3
+                            </span>
+                          </div>
+                        </button>
+
+                        <button
+                          onClick={() =>
+                            handleNavigate("refleksi-pplm", "mandiri")
+                          }
+                          className={`w-full flex items-center gap-3 p-2.5 rounded-xl text-xs font-semibold transition-all text-left ${
+                            isPplmActive && pplmSubmenu === "mandiri"
+                              ? "bg-indigo-600 text-white shadow-sm"
+                              : "text-slate-700 hover:bg-indigo-50"
+                          }`}
+                        >
+                          <Briefcase className="w-4 h-4 shrink-0" />
+                          <div>
+                            <span className="block font-bold">PPL Mandiri</span>
+                            <span
+                              className={`text-[10px] block ${
+                                isPplmActive && pplmSubmenu === "mandiri"
+                                  ? "text-white/80"
+                                  : "text-slate-400"
+                              }`}
+                            >
+                              Praktik Mandiri & 6 Analisis
+                            </span>
+                          </div>
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 {/* Karya Inovasi */}
                 <button
                   onClick={() => handleNavigate("karya-inovasi")}
@@ -653,8 +860,12 @@ export default function App() {
           {activeTab === "refleksi-ppdb" && (
             <RefleksiPPDB key="refleksi-ppdb" />
           )}
-          {activeTab === "refleksi-ppl-2" && (
-            <RefleksiPPL2 key="refleksi-ppl-2" />
+          {(activeTab === "refleksi-pplm" ||
+            activeTab === "refleksi-ppl-2") && (
+            <RefleksiPPLM
+              key={`refleksi-pplm-${pplmSubmenu}`}
+              initialSubmenu={pplmSubmenu}
+            />
           )}
           {activeTab === "refleksi-pk" && <RefleksiPK key="refleksi-pk" />}
         </AnimatePresence>
